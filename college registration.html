@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>College Registration</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* CSS styles as before */
+        /* ... */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+        }
+
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input,
+        select,
+        textarea {
+            width: 200%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        textarea {
+            resize: vertical;
+            height: 100px;
+        }
+
+        button {
+            background-color: #007BFF;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo">Your Logo</div>
+        <nav>
+            <ul>
+                <li><a href="main.html">Home</a></li>
+                <li><a href="about us.html">About Us</a></li>
+                <li><a href="contact us.html">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+    <br>
+    <form>
+        <h1> <center>College Registration </h1>
+        <br>
+        <label for="collegeName">College Name:</label>
+        <input type="text" id="collegeName" required>
+
+        <label for="university">University:</label>
+        <input type="text" id="university" required>
+
+        <label for="country">Country:</label>
+        <input type="text" id="country" required>
+
+        <label for="state">State:</label>
+        <input type="text" id="state" required>
+
+        <label for="address">Address:</label>
+        <textarea id="address" required></textarea>
+
+        <label for="departments">Departments:</label>
+        <input type="text" id="departments" required>
+
+        <label for="totalIntake">Total Intake:</label>
+        <input type="number" id="totalIntake" required>
+
+        <label for="departmentIntake">Department-wise Intake:</label>
+        <div id="departmentInputs">
+            <!-- Department 1 -->
+            <div>
+                <input type="text" class="departmentName" placeholder="Department Name" required>
+                <input type="number" class="departmentIntake" placeholder="Intake" required>
+            </div>
+
+            <!-- Department 2 -->
+            <div>
+                <input type="text" class="departmentName" placeholder="Department Name" required>
+                <input type="number" class="departmentIntake" placeholder="Intake" required>
+            </div>
+
+            <!-- Add more department fields as needed -->
+        </div>
+        <center>
+            <button type="submit">Register</button>
+        </center>
+        
+    </form>
+    <br><br>
+    <footer>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>&emsp;&emsp;
+                <li><a href="about us.html">About Us</a></li>&emsp;&emsp;
+                <li><a href="contact us.html">Contact Us</a></li>
+            </ul>
+        </nav>
+        <p>&copy; 2023 Your Company Name. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>

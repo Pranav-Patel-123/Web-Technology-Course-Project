@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Four Cards Page</title>
+    <link rel="stylesheet" href="styles1.css">
+    <style>
+        body {
+
+            flex-wrap: wrap;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .card {
+            width: 300px;
+            border: 1px solid #ccc;
+            margin: 10px;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .card img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .card-group {
+            display: flex;
+            flex-wrap: wrap;
+            /* This allows the cards to wrap to the next line if the container width is not enough */
+            justify-content: center;
+            /* This centers the cards horizontally within the container */
+        }
+
+        .card {
+            width: 300px;
+            border: 1px solid #ccc;
+            margin: 10px;
+            padding: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo">Your Logo</div>
+        <nav>
+            <ul>
+                <li><a href="main.html">Home</a></li>
+                <li><a href="about us.html">About Us</a></li>
+                <li><a href="contact us.html">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="card-group">
+            <div class="card"><a href="applicants list.html">
+                    <img src="applicants.jpg" class="card-img-top" alt="">
+                    <div class="card-body">
+                        <h5 class="card-title">Applicants</h5>
+                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+                            additional content. This card has even longer content than the first to show that equal
+                            height
+                            action.</p>
+                        <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+                </a>
+            </div>
+        </div>
+        <div class="card"><a href="resume.html">
+                <img src="resume.jpg" class="card-img-top" alt="">
+                <div class="card-body">
+                    <h5 class="card-title">Resumes</h5>
+                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+                        additional content. This content is a little bit longer.</p>
+                    <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+                </div>
+            </a>
+        </div>
+        </div>
+        <div class="card-group">
+            <div class="card"><a href="test main.html">
+                <img src="test.png" class="card-img-top" alt="">
+                <div class="card-body">
+                    <h5 class="card-title">Test</h5>
+                    <p class="card-text">This card has supporting text below as a natural lead-in to additional content.
+                    </p>
+                    <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+                </div>
+            </a>
+            </div>
+            <div class="card">
+                <img src="interview.png" class="card-img-top" alt="">
+                <div class="card-body">
+                    <h5 class="card-title">Interview</h5>
+                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+                        additional content. This content is a little bit longer.</p>
+                    <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+                </div>
+            </div>
+        </div>
+
+    </main>
+    <footer>
+        <nav>
+            <ul>
+                <li><a href="main.html">Home</a></li>&emsp;&emsp;
+                <li><a href="about us.html">About Us</a></li>&emsp;&emsp;
+                <li><a href="contact us.html">Contact Us</a></li>
+            </ul>
+        </nav>
+        <p>&copy; 2023 Your Company Name. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>
