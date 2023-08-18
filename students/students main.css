@@ -1,0 +1,78 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+}
+
+.carousel {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.carousel-container {
+    display: flex;
+    animation: slide 10s infinite;
+}
+
+@keyframes slide {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+.carousel-slide {
+    flex: 0 0 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carousel-slide img {
+    max-width: 100%;
+    max-height: 300px; /* Increased image size */
+}
+
+.recruitment {
+    text-align: center;
+    padding: 2rem;
+    font-size: 24px; /* Increased font size */
+}
+
+.position-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.position-card {
+    border: 1px solid #ddd;
+    padding: 1rem;
+    margin: 1rem;
+    min-width: 300px;
+    max-width: 400px;
+    text-align: left;
+    font-size: 18px; /* Increased font size */
+}
+
+.apply-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+}
+
+.apply-button:hover {
+    background-color: #0056b3;
+}

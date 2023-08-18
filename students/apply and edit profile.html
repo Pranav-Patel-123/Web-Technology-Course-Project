@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Profile</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .profile {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        
+        .profile p {
+            font-weight: bold;
+            margin-bottom: 10px;
+            font-size: 18px;
+            color: #555;
+        }
+        
+        .edit-button {
+            text-align: center;
+            margin-top: 20px;
+        }
+        
+        #editButton,
+        #ApplyButton {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out;
+        }
+        
+        #editButton:hover,
+        #ApplyButton:hover {
+            background-color: #0056b3;
+        }
+        
+        .whyapply {
+            margin-top: 20px;
+        }
+        
+        .whyapply label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+        }
+        
+        .whyapply textarea {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            height: 800px; 
+        }
+        
+        
+        body {
+            line-height: 1.6;
+        }
+        
+        .profile {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        
+        h1 {
+            color: #000000;
+        }
+        
+        .profile p {
+            color: #333;
+        }
+        
+        #editButton,
+        #ApplyButton {
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        #editButton {
+            background-color: #ff5722;
+            
+        }
+        
+        #ApplyButton {
+            background-color: #4caf50;
+        }
+        
+        #ApplyButton:hover {
+            background-color: #4caf50;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="profile">
+        <h1>Your Profile</h1>
+        <p>Username: <span id="username"></span></p>
+        <p>University: <span id="university"></span></p>
+        <p>Major: <span id="major"></span></p>
+        <p>GPA: <span id="gpa"></span></p>
+        <p>Phone: <span id="phone"></span></p>
+        <p>Graduation Year: <span id="gradYear"></span></p>
+        <p>Languages: <span id="languages"></span></p>
+        <p>Internship: <span id="internship"></span></p>
+        <p>LinkedIn: <span id="linkedin"></span></p>
+        <p>Skills: <span id="skills"></span></p>
+        <p>Resume: <span id="resume"></span></p>
+        <br>
+        <p>Why do you want to apply for this job title? <span id="whyapply"></span></p>
+        <input type="text" id="whyapply"/>
+        
+    </div>
+
+    
+
+    <div class="edit-button">
+        <button id="editButton">Edit Profile</button>&emsp;
+        <button id="ApplyButton">Apply</button>
+    </div>
+    <br><br><br>
+</body>
+
+</html>

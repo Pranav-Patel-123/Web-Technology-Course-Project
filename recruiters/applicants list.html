@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Student List</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* CSS styles for the table */
+        table {
+            border-collapse: collapse;
+            width: 97%;
+            padding: 10px;
+        }
+
+        th,
+        td {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        th.sortable:hover {
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo">Your Logo</div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="about us.html">About Us</a></li>
+                <li><a href="contact us.html">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+    <br><br>
+    <h1><center>Student List</h1>
+<br>
+    &emsp;<label for="sortDropdown">Sort By:</label>
+    <select id="sortDropdown">
+        <option value="cgpa">CGPA</option>
+        <option value="name">Name</option>
+        <option value="department">Department</option>
+    </select>
+<br>
+<br>
+<center>
+    <table id="studentTable">
+        <thead>
+            <tr>
+                <th class="sortable" onclick="sortTable(0)">Name</th>
+                <th class="sortable" onclick="sortTable(1)">Department</th>
+                <th class="sortable" onclick="sortTable(2)">CGPA</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Example student data -->
+            <tr>
+                <td>John Doe</td>
+                <td>Computer Science</td>
+                <td>3.75</td>
+            </tr>
+            <tr>
+                <td>Jane Smith</td>
+                <td>Electrical Engineering</td>
+                <td>3.90</td>
+            </tr>
+            <tr>
+                <td>Bob Johnson</td>
+                <td>Mechanical Engineering</td>
+                <td>3.60</td>
+            </tr>
+            <!-- Add more student entries as needed -->
+        </tbody>
+    </table>
+    <br><br>
+    <footer>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>&emsp;&emsp;
+                <li><a href="#about">About Us</a></li>&emsp;&emsp;
+                <li><a href="contact us.html">Contact Us</a></li>
+            </ul>
+        </nav>
+        <p>&copy; 2023 Your Company Name. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function sortTable(columnIndex) {
+            var table, rows, switching, i, x, y, shouldSwitch;
+            table = document.getElementById("studentTable");
+            switching = true;
+
+            while (switching) {
+                switching = false;
+                rows = table.getElementsByTagName("tr");
+
+                for (i = 1; i < (rows.length - 1); i++) {
+                    shouldSwitch = false;
+                    x = rows[i].getElementsByTagName("td")[columnIndex];
+                    y = rows[i + 1].getElementsByTagName("td")[columnIndex];
+
+                    if (columnIndex === 2) { // For CGPA sorting
+                        shouldSwitch = parseFloat(x.textContent) < parseFloat(y.textContent);
+                    } else {
+                        shouldSwitch = x.textContent.toLowerCase() > y.textContent.toLowerCase();
+                    }
+
+                    if (shouldSwitch) {
+                        rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                        switching = true;
+                    }
+                }
+            }
+        }
+
+        document.getElementById('sortDropdown').addEventListener('change', function () {
+            var sortBy = this.value;
+            var columnIndex = sortBy === 'name' ? 0 : sortBy === 'department' ? 1 : 2;
+            sortTable(columnIndex);
+        });
+    </script>
+
+</body>
+
+</html>

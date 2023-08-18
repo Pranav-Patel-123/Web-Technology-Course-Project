@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Profile</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+        }
+
+        .profile {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .profile p {
+            font-weight: bold;
+            margin-bottom: 10px;
+            font-size: 18px;
+            color: #555;
+        }
+
+        .edit-button {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        #editButton {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        #editButton:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="profile">
+        <h1>Profile</h1>
+        <p>Username: <span id="username"></span></p>
+        <p>University: <span id="university"></span></p>
+        <p>Major: <span id="major"></span></p>
+        <p>GPA: <span id="gpa"></span></p>
+        <p>Phone: <span id="phone"></span></p>
+        <p>Graduation Year: <span id="gradYear"></span></p>
+        <p>Languages: <span id="languages"></span></p>
+        <p>Internship: <span id="internship"></span></p>
+        <p>LinkedIn: <span id="linkedin"></span></p>
+        <p>Skills: <span id="skills"></span></p>
+        <p>Resume: <span id="resume"></span></p>
+    </div>
+
+    <div class="edit-button">
+        <button id="editButton">Edit</button>
+    </div>
+
+    <script>
+        // Retrieve user input data from the URL parameters
+        const urlParams = new URLSearchParams(window.location.search);
+        const username = urlParams.get('username');
+        const university = urlParams.get('university');
+        const major = urlParams.get('major');
+        const gpa = urlParams.get('gpa');
+        const phone = urlParams.get('phone');
+        const gradYear = urlParams.get('gradYear');
+        const languages = urlParams.get('languages');
+        const internship = urlParams.get('internship');
+        const linkedin = urlParams.get('linkedin');
+        const skills = urlParams.get('skills');
+        const resume = urlParams.get('resume');
+
+        // Update the content of the span elements with user data
+        document.getElementById('username').textContent = username;
+        document.getElementById('university').textContent = university;
+        document.getElementById('major').textContent = major;
+        document.getElementById('gpa').textContent = gpa;
+        document.getElementById('phone').textContent = phone;
+        document.getElementById('gradYear').textContent = gradYear;
+        document.getElementById('languages').textContent = languages;
+        document.getElementById('internship').textContent = internship;
+        document.getElementById('linkedin').textContent = linkedin;
+        document.getElementById('skills').textContent = skills;
+        document.getElementById('resume').textContent = resume;
+
+        // Add event listener to the Edit button
+        const editButton = document.getElementById('editButton');
+        editButton.addEventListener('click', () => {
+            // Redirect to the edit page passing the form data as URL parameters
+            window.location.href = `edit_profile.html?username=${username}&university=${university}&major=${major}&gpa=${gpa}&phone=${phone}&gradYear=${gradYear}&languages=${languages}&internship=${internship}&linkedin=${linkedin}&skills=${skills}&resume=${resume}`;
+        });
+    </script>
+</body>
+
+</html>
