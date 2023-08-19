@@ -126,8 +126,8 @@
   <section style="font-size:155%;">
     <form style="font-size:155%;">
     
-      <label for="collegeList" align="cleft">Select a College:</label>
-      <select id="collegeList" style="font-size:75%;">
+      <label for="collegeList" align="center">Select a College:</label>
+      <select id="college_List" style="font-size:75%;">
         <option value="">-- Select College --</option>
         <option value="college1">College 1</option>
         <option value="college2">College 2</option>
@@ -135,9 +135,25 @@
       </select>
       <br>
       <button type="button" id="registerButton" class="buttons"><a href="register college.html">Register College</a></button>
-      <button type="button" id="Proceed" class="buttons"><a href="recruiters main.html">Proceed</a></button>
+      <!-- <button type="button" id="Proceed" class="buttons"><a href="recruiters main.html">Proceed</a></button> -->
+      <button onclick="navigateToSelectedPage()">Proceed</button>
+      <script>
+        function navigateToSelectedPage() {
+            var dropdown = document.getElementById("college_List");
+            var selectedOption = dropdown.value;
+            // Redirect to the selected page based on the value of the selected option
+            if (selectedOption == "College 1") {
+                window.location.href = "recruiters main.html";
+            } else if (selectedOption == "College 2") { 
+                window.location.href = "page2.html";
+            } else if (selectedOption == "College 3") {
+                window.location.href = "page3.html";
+            }
+        }
+        </script>
     </form>
   </section>
+  
 </main>
 
 <footer>
@@ -150,6 +166,9 @@
   </nav>
   <p>&copy; 2023 Your Company Name. All rights reserved.</p>
 </footer>
+
+
+
 
 </body>
 </html>
