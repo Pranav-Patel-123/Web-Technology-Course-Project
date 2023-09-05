@@ -1,0 +1,268 @@
+/* Reset some default styles */
+:root{
+    /* --form-height:600px;
+    --form-width: 1100px; */
+    /*  Sea Green */
+    --left-color: #9fdeaf;
+    /*  Light Blue  */
+    --right-color: #96dbe2;
+  }
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Set a background color and font for the entire page */
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+  }
+  
+  /* Style the header */
+  header {
+    background-color: #333;
+    color: #fff;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .logo {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo img {
+    max-width: 100px; /* Adjust the max-width as needed */
+    height: auto;
+  }
+  
+  nav ul {
+    list-style: none;
+    display: flex;
+  }
+  
+  nav li {
+    margin-right: 1rem;
+  }
+  
+  nav a {
+    text-decoration: none;
+    color: #fff;
+  }
+  
+  /* Style the main section */
+  main {
+    padding: 2rem;
+  }
+  
+  #home {
+    text-align: center;
+    padding: 3rem 0;
+  }
+  
+  #home h1 {
+    font-size: 3rem;
+    color: #333;
+  }
+  
+  #home p {
+    font-size: 1.5rem;
+    color: #555;
+  }
+  
+  .buttons a {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background-color: #035a77;
+    color: #fff;
+    border-radius: 5px;
+    margin: 0 0.5rem;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+  }
+  
+  .buttons a:hover {
+    background-color: #cc5500;
+  }
+  
+  /* Style the content sections */
+  .main-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-top: 3rem;
+  }
+  
+  .content-section {
+    flex: 1;
+    padding: 2rem;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 0 1rem; /* Adjusted margin */
+  }
+  
+  .content-section h2 {
+    font-size: 2rem;
+    color: #333;
+  }
+  
+  .content-section p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #555;
+  }
+
+  .content-section1 {
+    flex: 1;
+    padding: 2rem;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 0 1rem; /* Adjusted margin */
+  }
+  
+  .content-section1 h2 {
+    font-size: 2rem;
+    color: #333;
+  }
+  
+  .content-section1 p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #555;
+  }
+  
+  /* Style the forms */
+  form {
+    margin-top: 1.5rem;
+    text-align: left;
+  }
+  
+  label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: #333;
+  }
+  
+  input[type="email"],
+  input[type="password"] {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    margin-bottom: 1rem;
+  }
+  
+  button {
+    background-color: #ff6600;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #cc5500;
+  }
+  
+  /* Style the footer */
+  footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+  }
+  
+  footer ul {
+    list-style: none;
+  }
+  
+  footer li {
+    display: inline;
+    margin-right: 1rem;
+  }
+  
+  footer a {
+    text-decoration: none;
+    color: #fff;
+  }
+  
+  /* Media queries for responsive design */
+  @media (max-width: 768px) {
+    header {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+  
+    nav ul {
+      margin-top: 1rem;
+      justify-content: center;
+    }
+  
+    .main-content {
+      flex-direction: column;
+    }
+  
+    .content-section {
+      margin-top: 2rem;
+    }
+  }
+  
+
+  /* Unique button styles for recruiters */
+.recruiter-login-btn,
+.recruiter-signup-btn {
+  background-color: #ff6600;
+  color: #fff;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin: 0.5rem 0;
+}
+
+.recruiter-signup-btn {
+  background-color: #0099cc;
+  margin-left: 1rem;
+}
+
+.recruiter-login-btn:hover,
+.recruiter-signup-btn:hover {
+  background-color: #cc5500;
+}
+
+/* Unique button styles for students */
+.student-login-btn,
+.student-signup-btn {
+  background-color: #0099cc;
+  color: #fff;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin: 0.5rem 0;
+}
+
+.student-signup-btn {
+  background-color: #0099cc;
+  margin-left: 1rem;
+}
+
+.student-login-btn:hover,
+.student-signup-btn:hover {
+  background-color: #cc5500;
+}
