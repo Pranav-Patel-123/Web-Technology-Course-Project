@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>College Registration</title>
+  <!-- Your existing styles here -->
+  <style>
+    /* Reset some default styles */
+    body,
+    p,
+    ul,
+    li,
+    form {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+    }
+
+    header {
+      background-color: #333;
+      color: #fff;
+      padding: 10px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-size: 24px;
+    }
+
+    nav ul {
+      list-style: none;
+    }
+
+    nav li {
+      display: inline-block;
+      margin-left: 20px;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    main {
+      padding: 20px;
+    }
+
+    section {
+      margin-bottom: 40px;
+    }
+
+    .buttons a {
+      display: inline-block;
+      background-color: #007BFF;
+      color: #fff;
+      padding: 10px 20px;
+      text-decoration: none;
+      margin-right: 10px;
+    }
+
+    form label {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    form input,
+    form textarea {
+      width: 50%;
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+
+    form button {
+      background-color: #007BFF;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      cursor: pointer;
+    }
+
+    form a {
+      display: block;
+      margin-top: 5px;
+    }
+
+    footer {
+      background-color: #333;
+      color: #fff;
+      padding: 10px;
+      text-align: center;
+    }
+
+    footer nav ul {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 10px;
+    }
+
+    footer nav li {
+      margin-left: 10px;
+    }
+
+    footer nav a {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    footer p {
+      font-size: 14px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <span class="logo">College Registration</span>
+    <nav>
+      <ul>
+        <li><a href="../main.html">Home</a></li>
+        <li><a href="../about us.html">About</a></li>
+        <li><a href="../contact us.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section>
+      <form>
+        <label for="collegeList">Select a College:</label>
+        <select id="collegeList"></select>
+        <br>
+        <button id="registerButton" type="button">Register College</button>
+        <button id="proceedButton" type="button">Proceed</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <nav>
+      <ul>
+        <li><a href="../main.html">Home</a></li>&emsp;&emsp;
+        <li><a href="../about us.html">About Us</a></li>&emsp;&emsp;
+        <li><a href="../contact us.html">Contact Us</a></li>
+      </ul>
+    </nav>
+    <p>&copy; 2023 Your Company Name. All rights reserved.</p>
+  </footer>
+  <footer>
+    <!-- Your existing footer content here -->
+  </footer>
+
+  <script>
+    // Fetch colleges from PHP and populate the dropdown
+    document.addEventListener("DOMContentLoaded", function () {
+      var collegeList = document.getElementById("collegeList");
+
+      // AJAX request to get colleges
+      var xhr = new XMLHttpRequest();
+      xhr.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+          var colleges = JSON.parse(this.responseText);
+
+          // Populate the dropdown
+          colleges.forEach(function (college) {
+            var option = document.createElement("option");
+            option.value = college;
+            option.text = college;
+            collegeList.add(option);
+          });
+        }
+      };
+      xhr.open("GET", "get_colleges.php", true);
+      xhr.send();
+
+
+      registerButton.addEventListener("click", function () {
+        window.location.href = 'register_college.html';
+      });
+
+      // Event listener for the Proceed button
+      proceedButton.addEventListener("click", function () {
+        window.location.href = 'recruiters_main.html';
+      });
+    });
+  </script>
+
+</body>
+
+</html>

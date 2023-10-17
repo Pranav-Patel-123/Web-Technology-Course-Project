@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="styles1.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        main {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            min-height: 80vh;
+        }
+
+        .form-container {
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            border-radius: 8px;
+            max-width: 400px;
+            width: 100%;
+            margin: 20px;
+            box-sizing: border-box;
+        }
+
+        form {
+            margin-top: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            width: 100%;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #444;
+        }
+
+        #positionFields label,
+        #positionFields input,
+        #positionFields select {
+            margin-top: 10px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .deadline-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body>
+    <?php
+    // Your PHP code to get the company name dynamically
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        // Assuming the company name is posted from the form
+        $company_name = $_POST["company_name"];
+    }
+    ?>
+    <header>
+        <div class="logo">Your Logo</div>
+        <nav>
+            <ul>
+                <li><a href="../main.html">Home</a></li>
+                <li><a href="../about us.html">About Us</a></li>
+                <li><a href="../contact us.html">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="form-container" id="recruiterSection">
+            <h2 style="font-size:300%;">For Recruiters</h2>
+        </div>
+
+        <form id="positionForm" method="POST" action="company_profile.php" enctype="multipart/form-data">
+
+            <label for="companyname">Company Name</label>
+            <input type="text" id="companyName" name="company_name">
+
+            <label for="image1">Image 1:</label>
+            <input type="file" id="image1" name="image1" accept=".jpg, .jpeg, .png, .gif" required>
+            <label for="image2">Image 2:</label>
+            <input type="file" id="image2" name="image2" accept=".jpg, .jpeg, .png, .gif" required>
+            <label for="image3">Image 3:</label>
+            <input type="file" id="image3" name="image3" accept=".jpg, .jpeg, .png, .gif" required>
+            <label for="image4">Image 4:</label>
+            <input type="file" id="image4" name="image4" accept=".jpg, .jpeg, .png, .gif" required>
+            <label for="numPositions">Number of Positions:</label>
+            <input type="number" id="numPositions" name="numPositions" max="5" required>
+            <button type="button" id="generatePositionsButton">Generate Positions</button>
+            <div id="positionFields" style="display: none;"></div>
+            <br>
+            <center><button type="submit" id="submitPositionsButton" onclick="prepareAndSubmitForm()">Submit</button></center>
+        </form>
+    </main>
+
+    <footer>
+        <nav>
+            <ul>
+                <li><a href="../main.html">Home</a></li>&emsp;&emsp;
+                <li><a href="../about us.html">About Us</a></li>&emsp;&emsp;
+                <li><a href="../contact us.html">Contact Us</a></li>
+            </ul>
+        </nav>
+        <p>&copy; 2023 Your Company Name. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.getElementById('generatePositionsButton').addEventListener('click', function () {
+            var numPositions = document.getElementById('numPositions').value;
+            var positionFields = document.getElementById('positionFields');
+            positionFields.innerHTML = '';
+
+            for (var i = 1; i <= numPositions; i++) {
+                var labelPosition = document.createElement('label');
+                labelPosition.textContent = 'Position ' + i + ':';
+
+                var inputPosition = document.createElement('input');
+                inputPosition.type = 'text';
+                inputPosition.name = 'position' + i;
+
+                var labelDeadline = document.createElement('label');
+                labelDeadline.textContent = 'Deadline for Position ' + i + ':';
+
+                var inputDeadline = document.createElement('input');
+                inputDeadline.type = 'date';
+                inputDeadline.name = 'deadline' + i;
+
+                var positionContainer = document.createElement('div');
+                positionContainer.className = 'deadline-container';
+
+                positionContainer.appendChild(labelPosition);
+                positionContainer.appendChild(inputPosition);
+                positionFields.appendChild(positionContainer);
+
+                positionContainer.appendChild(labelDeadline);
+                positionContainer.appendChild(inputDeadline);
+                positionFields.appendChild(positionContainer);
+            }
+
+            positionFields.style.display = 'block';
+        });
+
+        function prepareAndSubmitForm() {
+            var companyName = document.getElementById('companyName').value;
+            document.getElementById('company_name').value = companyName; // Set company name in the hidden field
+            document.getElementById('positionForm').submit();
+        }
+    </script>
+</body>
+
+</html>
